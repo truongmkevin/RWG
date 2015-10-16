@@ -1,3 +1,23 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+  background-color: #0C144C;
+  text-align: center;
+}
+
+button {
+  max-width: 300px;
+}
+
+.container-fluid {
+  background-color: #0C144C;
+}
+
+.exercise {
+  font-family: Nunito, Monospace;
+  font-size: 15vmin;
+  color: #FFFFFF;
+  padding: 20px 20px 20px 20px;
+}
