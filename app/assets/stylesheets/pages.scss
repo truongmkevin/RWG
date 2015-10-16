@@ -11,6 +11,16 @@ button {
   max-width: 300px;
 }
 
+.btn-xlg {
+    font-family: Nunito, Monospace;
+    padding: 20px 30px;
+    font-size: 6vmin;
+    line-height: 2;
+    -webkit-border-radius: 14px;
+       -moz-border-radius: 14px;
+            border-radius: 14px;
+}
+
 .container-fluid {
   background-color: #0C144C;
 }
@@ -20,4 +30,48 @@ button {
   font-size: 15vmin;
   color: #FFFFFF;
   padding: 20px 20px 20px 20px;
+}
+
+.positiveText {
+  font-family: Nunito, Monospace;
+  font-size: 7vmin;
+  color: #FFFFFF;
+}
+
+/* Animations from Animate.CSS */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+  -webkit-animation-duration: 0.5s;
 }
