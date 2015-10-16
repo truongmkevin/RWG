@@ -13,7 +13,7 @@ button {
 }
 
 .app {
-  padding: 20px 30px 150px 30px;
+  padding: 100px 30px 150px 30px;
   width: 100%;
   min-height: 400px;
   max-height: 500px;
@@ -28,9 +28,9 @@ button {
 
 .btn-xlg {
     font-family: Nunito, Monospace;
-    padding: 20px 30px;
+    padding: 10px;
     font-size: 6vmin;
-    line-height: 2;
+    line-height: 1.6;
     -webkit-border-radius: 14px;
        -moz-border-radius: 14px;
             border-radius: 14px;
@@ -42,7 +42,7 @@ button {
 
 .exercise {
   font-family: Nunito, Monospace;
-  font-size: 15vmin;
+  font-size: 12vmin;
   color: #FFFFFF;
   padding: 20px 20px 20px 20px;
 }
@@ -51,6 +51,12 @@ button {
   font-family: Nunito, Monospace;
   font-size: 7vmin;
   color: #FFFFFF;
+}
+
+.title {
+  font-family: Nunito, Monospace;
+  font-size: 8vmin;
+  color:#FFFFFF;
 }
 
 /* Animations from Animate.CSS */

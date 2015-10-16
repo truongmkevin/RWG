@@ -1,11 +1,10 @@
 <div class="container-fluid">
 
   <div class="text-primary text-center">
-    <h1>Random Workout Generator</h1>
+    <h1 class="title">Exercise Roulette!</h1>
   </div>
 
   <div class="app">
-    <button class="button btn btn-default">New Exercise</button>
     <div class="exercise"></div>
     <div class="positiveText"></div>
   </div> <!-- app -->
@@ -13,10 +12,10 @@
   <div class="app-btn">
     <div class="row center-block">
       <div class="col-xs-6">
-        <button class="btn btn-block btn-success btn-xlg center-block"> DONE </button>
+        <button class="btn btn-block btn-success btn-xlg center-block done-btn"> DONE </button>
       </div>
       <div class="col-xs-6">
-        <button class="btn btn-block btn-danger btn-xlg center-block"> SKIP </button>
+        <button class="btn btn-block btn-danger btn-xlg center-block skip-btn"> SKIP </button>
       </div>
     </div>
   </div>
@@ -48,8 +47,12 @@
 
     }
 
-  $(".button").on( "click", function() {
+  $(".done-btn").on( "click", function() {
       positiveText();
+      generate();
+  });
+
+  $(".skip-btn").on( "click", function() {
       generate();
   });
 
