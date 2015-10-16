@@ -5,10 +5,25 @@
 html, body {
   background-color: #0C144C;
   text-align: center;
+  height: 100%;
 }
 
 button {
   max-width: 300px;
+}
+
+.app {
+  padding: 20px 30px 150px 30px;
+  width: 100%;
+  min-height: 400px;
+  max-height: 500px;
+}
+
+.app-btn {
+  position: fixed;
+  bottom: 3vmin;
+  left: 0px;
+  width: 100%;
 }
 
 .btn-xlg {

@@ -5,20 +5,19 @@
   </div>
 
   <div class="app">
-
     <button class="button btn btn-default">New Exercise</button>
     <div class="exercise"></div>
     <div class="positiveText"></div>
-
-
   </div> <!-- app -->
 
-  <div class="row">
-    <div class="col-xs-6">
-      <button class="btn btn-block btn-success btn-xlg center-block"> DONE </button>
-    </div>
-    <div class="col-xs-6">
-      <button class="btn btn-block btn-danger btn-xlg center-block"> SKIP </button>
+  <div class="app-btn">
+    <div class="row center-block">
+      <div class="col-xs-6">
+        <button class="btn btn-block btn-success btn-xlg center-block"> DONE </button>
+      </div>
+      <div class="col-xs-6">
+        <button class="btn btn-block btn-danger btn-xlg center-block"> SKIP </button>
+      </div>
     </div>
   </div>
 
@@ -43,7 +42,6 @@
       var animationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend"
 
       randomText = text[Math.floor(Math.random()*text.length)];
-      /*$('.positiveText').text(randomText);*/
       $('.positiveText').text(randomText).removeClass("hidden").addClass("animated fadeOutUp").one(animationEnd, function() {
         $(this).removeClass("animated fadeOutUp").addClass("hidden");
       });
