@@ -13,7 +13,7 @@ button {
 }
 
 .app {
-  padding: 100px 30px 150px 30px;
+  padding: 100px 30px 100px 30px;
   width: 100%;
   min-height: 400px;
   max-height: 500px;
@@ -57,6 +57,7 @@ button {
   font-family: Nunito, Monospace;
   font-size: 8vmin;
   color:#FFFFFF;
+  padding: 8vmin 0px 2vmin 0px;
 }
 
 /* Animations from Animate.CSS */
@@ -95,4 +96,14 @@ button {
   -webkit-animation-name: fadeOutUp;
   animation-name: fadeOutUp;
   -webkit-animation-duration: 0.5s;
+}
+
+/* To Center App */
+.container-table {
+    height: 100%;
+    display: table;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
 }
