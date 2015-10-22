@@ -29,23 +29,7 @@
 
 <script type="text/javascript">
 
-  function hideAddressBar() {
-    if(!window.location.hash) {
-      if(document.height <= window.outerHeight + 10) {
-          document.body.style.height = (window.outerHeight + 50) +'px';
-          setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-      }
-      else {
-        setTimeout( function(){ window.scrollTo(0, 1); }, 0 );
-      }
-    }
-  }
-
-  window.addEventListener("load", hideAddressBar );
-  window.addEventListener("orientationchange", hideAddressBar );
-
   $( document ).ready(function() {
-    generate();
 
     function generate(){
 
@@ -64,7 +48,18 @@
       $('.positiveText').text(randomText).removeClass("hidden").addClass("animated fadeOutUp").one(animationEnd, function() {
         $(this).removeClass("animated fadeOutUp").addClass("hidden");
       });
+    }
 
+    function hideAddressBar() {
+      if(!window.location.hash) {
+        if(document.height <= window.outerHeight + 10) {
+          document.body.style.height = (window.outerHeight + 50) +'px';
+          setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+        }
+        else {
+          setTimeout( function(){ window.scrollTo(0, 1); }, 0 );
+        }
+      }
     }
 
   $(".done-btn").on( "click", function() {
@@ -75,6 +70,11 @@
   $(".skip-btn").on( "click", function() {
       generate();
   });
+
+  generate();
+  hideAddressBar();
+
+  window.addEventListener("orientationchange", hideAddressBar );
 
   });
 
