@@ -6,7 +6,13 @@
 
   <div class="app container-table">
     <div class="row vertical-center-row">
-      <div class="exercise"></div>
+      <div class="starter-container">
+        <div class="starter">Ready to workout?</div>
+        <button class="btn btn-block btn-default btn-xlg center-block begin-btn"> BEGIN </button>
+      </div>
+      <div class="exercise-container">
+        <div class="exercise"></div>
+      </div>
     </div>
   </div> <!-- app -->
 
@@ -50,6 +56,7 @@
       });
     }
 
+    /* Attempt to hide address bar on mobile view; doesn't seem to be working...*/
     function hideAddressBar() {
       if(!window.location.hash) {
         if(document.height <= window.outerHeight + 10) {
@@ -62,6 +69,20 @@
       }
     }
 
+    function hideStarter() {
+      $('.starter-container').addClass("hidden");
+    }
+
+    function hideExercise() {
+      $('.exercise-container').addClass("hidden");
+      $('.app-btn').addClass("hidden");
+    }
+
+    function showExercise() {
+      $('.exercise-container').removeClass("hidden");
+      $('.app-btn').removeClass("hidden");
+    }
+
   $(".done-btn").on( "click", function() {
       positiveText();
       generate();
@@ -71,8 +92,15 @@
       generate();
   });
 
-  generate();
+  $(".begin-btn").on( "click", function() {
+      hideStarter();
+      showExercise();
+      generate();
+  });
+
   hideAddressBar();
+  hideExercise();
+  titleDisplay();
 
   window.addEventListener("orientationchange", hideAddressBar );
 
