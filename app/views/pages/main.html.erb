@@ -10,6 +10,7 @@
         <div class="starter">Ready to workout?</div>
         <button class="btn btn-block btn-default btn-xlg center-block begin-btn"> BEGIN </button>
       </div>
+      <div class="countdown"></div>
       <div class="exercise-container">
         <div class="exercise"></div>
       </div>
@@ -37,7 +38,24 @@
 
   $( document ).ready(function() {
 
-    function generate(){
+    function countdown() {
+      var fadeTime = 400;
+      $('.countdown').text(3).fadeIn(fadeTime).fadeOut(fadeTime).promise()
+      .done(function(){
+        $('.countdown').text(2).fadeIn(fadeTime).fadeOut(fadeTime).promise()
+        .done(function() {
+          $('.countdown').text(1).fadeIn(fadeTime).fadeOut(fadeTime).promise()
+          .done(function() {
+            $('.countdown').text("GO!").fadeIn(fadeTime).fadeOut(fadeTime).promise()
+            .done(function(){
+              showExercise();
+            });
+          });
+        });
+      });
+    }
+
+    function generate() {
 
       var exercises = ["10 Pushups", "10 Lunges per leg", "20 Squats", "30 Mountain Climbers", "20 Jumping Jacks"];
 
@@ -81,6 +99,7 @@
     function showExercise() {
       $('.exercise-container').removeClass("hidden");
       $('.app-btn').removeClass("hidden");
+      generate();
     }
 
   $(".done-btn").on( "click", function() {
@@ -93,14 +112,12 @@
   });
 
   $(".begin-btn").on( "click", function() {
-      hideStarter();
-      showExercise();
-      generate();
+    hideStarter();
+    countdown();
   });
 
   hideAddressBar();
   hideExercise();
-  titleDisplay();
 
   window.addEventListener("orientationchange", hideAddressBar );
 
